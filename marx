@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if correct number of arguments are provided
+if [ "$#" -ne 4 ]; then
+	echo "Usage: $0 <start_url> <depth> <query> <output_file>"
+	exit 1
+fi
+
+# Arguments for the Python script
+START_URL="$1"
+DEPTH="$2"
+QUERY="$3"
+OUTPUT_FILE="$4"
+
+# Run the Python script with the specified arguments
+python3 ~/.local/bin/startpyeng/web_search_engine.py $START_URL -d $DEPTH -q $QUERY -o $OUTPUT_FILE
